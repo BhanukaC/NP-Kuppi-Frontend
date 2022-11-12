@@ -3,7 +3,7 @@ function getData() {
 
 
 
-    fetch('http://localhost:5000', {
+    fetch('http://kuppi-919878.us-east-1.elb.amazonaws.com/', {
         method: 'GET',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -11,7 +11,7 @@ function getData() {
         }
     }).then(res => res.json())
         .then(res => {
-            document.getElementById("arrPrint").innerHTML = res;
+            document.getElementById("arrPrint").innerHTML = JSON.stringify(res);
             console.log(res)
         });
 
